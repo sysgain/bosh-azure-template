@@ -2,6 +2,19 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "apigeeEdge": {
+			"type": "string"
+		},
+		"managementUI": {
+			"type": "string"
+		},
+		"managementDNSName": {
+			"type": "string"
+
+		},
+		"runtimePublicDNSName": {
+			"type": "string"
+		},
     "storageAccountNamePrefixString": {
       "type": "string",
       "metadata": {
@@ -360,6 +373,10 @@
           "fileUris": [
             "https://s3-us-west-2.amazonaws.com/bosh-azure-releases/bootstrap.py"
           ],
+          "managementUI": "[parameters('managementUI')]",
+				  "apigeeEdge": "[parameters('apigeeEdge')]",
+				  "managementDNSName": "[parameters('managementDNSName')]",
+				  "runtimePublicDNSName": "[parameters('runtimePublicDNSName')]",
           "adminSSHKey": "[parameters('adminSSHKey')]",
           "commandToExecute": "[concat('python ./bootstrap.py ', parameters('installSize'), ' ', variables('webSessionPassword'))]",
           "location": "[variables('location')]",
