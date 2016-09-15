@@ -202,7 +202,7 @@
 		"publicIPDNSName": "[concat(parameters('apigeeDeploymentName'), '-management')]",
 		"sshKey": "[parameters('adminSSHKey')]",
 		"sshPrivateKey": " ",
-		"templateLocation": "https://gallery.azure.com/artifact/20151001/apigee.apigee-edgeapigee-edge.1.0.2/Artifacts",
+		"templateLocation": "https://raw.githubusercontent.com/sysgain/bosh-azure-template/pivotal-P2P/pivotal-P2P/Apigee",
 		"tshirtSize": "XSmall"
 
 
