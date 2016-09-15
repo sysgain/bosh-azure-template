@@ -134,6 +134,19 @@
             }
           },
           {
+            "name": "SSL-port",
+            "properties": {
+              "description": "Allow SSL",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "8443",
+              "sourceAddressPrefix": "Internet",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 106,
+              "direction": "Inbound"
+            },
+          {
             "name": "SSH-port",
             "properties": {
               "description": "Allow RDP",
