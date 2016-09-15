@@ -145,6 +145,7 @@
               "access": "Allow",
               "priority": 106,
               "direction": "Inbound"
+             }
             },
           {
             "name": "SSH-port",
