@@ -187,7 +187,7 @@
 		"publicIPDNSName": "[concat(parameters('apigeeDeploymentName'), '-management')]",
 		"sshKey": "[parameters('adminSSHKey')]",
 		"sshPrivateKey": " ",
-		"templateLocation": "https://raw.githubusercontent.com/sysgain/bosh-azure-template/pivotal-P2P/pivotal-P2P/Apigee",
+		"templateLocation": "https://raw.githubusercontent.com/sysgain/bosh-azure-template/Pivotalp2pv2/pivotal-P2P/Apigee",
 		"tshirtSize": "XSmall"
 
 
