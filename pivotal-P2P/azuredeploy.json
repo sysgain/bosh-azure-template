@@ -2,14 +2,7 @@
 	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-		"location": {
-			"type": "string",
-			"defaultValue": "westus",
-			"metadata": {
-				"description": "Deployment location of where Apigee will be installed"
-			}
-		},
-
+	
 		"adminUsername": {
 			"type": "string",
 			"metadata": {
@@ -146,7 +139,7 @@
 		"extensionName": "initdevbox",
 		"newStorageAccountName": "[concat(parameters('storageAccountNamePrefixString'),uniquestring(resourceGroup().id, deployment().name))]",
 		"vmName": "[concat('myjumpbox',uniquestring(resourceGroup().id, deployment().name))]",
-		"location": "[parameters('location')]",
+		"location": "westus",
 		"storageAccountType": "Standard_GRS",
 		"vmStorageAccountContainerName": "vhds",
 		"storageid": "[resourceId('Microsoft.Storage/storageAccounts', variables('newStorageAccountName'))]",
@@ -174,14 +167,14 @@
 		"apigeeTemplateLink": "[concat(variables('baseUri'),parameters('apigeeEdge'),'.json')]",
 		"pcfTemplateLink": "https://raw.githubusercontent.com/sysgain/bosh-azure-template/Pivotalp2pv2/azuredeploy.json",
 		"managementPublicIPDNSName": "[concat(parameters('apigeeDeploymentName'), uniqueString(resourceGroup().id, deployment().name), '-management')]",
-		"managementUI": "[concat('http://', variables('managementPublicIPDNSName'), '.', tolower(replace(parameters('location'),' ','')), '.cloudapp.azure.com', ':9000')]",
-		"managementDNSName": "[concat('https://', variables('managementPublicIPDNSName'), '.', tolower(replace(parameters('location'),' ','')), '.cloudapp.azure.com')]",
-		"managementDNSAlias": "[concat(variables('managementPublicIPDNSName'), '.', tolower(replace(parameters('location'),' ','')), '.cloudapp.azure.com')]",
+		"managementUI": "[concat('http://', variables('managementPublicIPDNSName'), '.', tolower(replace(variables('location'),' ','')), '.cloudapp.azure.com', ':9000')]",
+		"managementDNSName": "[concat('https://', variables('managementPublicIPDNSName'), '.', tolower(replace(variables('location'),' ','')), '.cloudapp.azure.com')]",
+		"managementDNSAlias": "[concat(variables('managementPublicIPDNSName'), '.', tolower(replace(variables('location'),' ','')), '.cloudapp.azure.com')]",
 		"managementPublicIPAddressName": "[concat('ApigeeManagementPublicIP-',parameters('apigeeDeploymentName'))]",
 		"managementPublicIPResourceId": "[resourceId('Microsoft.Network/publicIPAddresses', variables('managementPublicIPAddressName'))]",
 		"runtimePublicIPDNSName": "[concat(parameters('apigeeDeploymentName'), uniqueString(resourceGroup().id, deployment().name), '-runtime')]",
-		"runtimePublicDNSName": "[concat('https://', variables('runtimePublicIPDNSName'), '.', tolower(replace(parameters('location'),' ','')), '.cloudapp.azure.com')]",
-		"runtimePublicDNSAlias": "[concat(variables('runtimePublicIPDNSName'), '.', tolower(replace(parameters('location'),' ','')), '.cloudapp.azure.com')]",
+		"runtimePublicDNSName": "[concat('https://', variables('runtimePublicIPDNSName'), '.', tolower(replace(variables('location'),' ','')), '.cloudapp.azure.com')]",
+		"runtimePublicDNSAlias": "[concat(variables('runtimePublicIPDNSName'), '.', tolower(replace(variables('location'),' ','')), '.cloudapp.azure.com')]",
 		"runtimePublicIPAddressName": "[concat('ApigeeRuntimePublicIP-',parameters('apigeeDeploymentName'))]",
 		"runtimePublicIPResourceId": "[resourceId('Microsoft.Network/publicIPAddresses', variables('runtimePublicIPAddressName'))]",
 		"publicIPDNSName": "[concat(parameters('apigeeDeploymentName'), '-management')]",
@@ -263,7 +256,7 @@
 						"value": "[variables('installSize')]"
 					},
 					"location": {
-						"value": "[parameters('location')]"
+						"value": "[variables('location')]"
 					},
 					"apigeeAdminPassword": {
 						"value": "[parameters('apigeeAdminPassword')]"
@@ -290,7 +283,7 @@
 					},
 
 					"location": {
-						"value": "[parameters('location')]"
+						"value": "[variables('location')]"
 					},
 					"apigeeDeploymentName": {
 						"value": "[parameters('apigeeDeploymentName')]"
