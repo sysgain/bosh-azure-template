@@ -3,11 +3,29 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "location": {
-      "type": "string",
-      "metadata": {
-        "description": "Deployment location of where Apigee will be installed"
-      }
-    },
+			"type": "string",
+			"defaultValue": "West US",
+			"allowedValues": [
+				"Brazil South",
+				"East Asia",
+				"East US",
+				"Japan East",
+				"Japan West",
+				"North Central US",
+				"North Europe",
+				"South Central US",
+				"West Europe",
+				"West US",
+				"Southeast Asia",
+				"Central US",
+				"East US 2",
+				"westus"
+			],
+			"metadata": {
+				"description": "Deployment location of where Apigee will be installed"
+			}
+		},
+
     "tshirtSize": {
       "type": "string",
       "defaultValue": "XSmall",
