@@ -2,7 +2,29 @@
 	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-	
+	"location": {
+			"type": "string",
+			"defaultValue": "westus",
+			"allowedValues": [
+				"brazilsouth",
+				"eastasia",
+				"eastus",
+				"japaneast",
+				"japanwest",
+				"northcentralus",
+				"northeurope",
+				"southcentralus",
+				"westeurope",
+				"westus",
+				"southeastasia",
+				"centralus",
+				"eastus2"
+			],
+			"metadata": {
+				"description": "Deployment location of where Apigee will be installed"
+			}
+		},
+
 		"adminUsername": {
 			"type": "string",
 			"metadata": {
@@ -139,7 +161,7 @@
 		"extensionName": "initdevbox",
 		"newStorageAccountName": "[concat(parameters('storageAccountNamePrefixString'),uniquestring(resourceGroup().id, deployment().name))]",
 		"vmName": "[concat('myjumpbox',uniquestring(resourceGroup().id, deployment().name))]",
-		"location": "westus",
+		"location": "[parameters('location')]",
 		"storageAccountType": "Standard_GRS",
 		"vmStorageAccountContainerName": "vhds",
 		"storageid": "[resourceId('Microsoft.Storage/storageAccounts', variables('newStorageAccountName'))]",
@@ -261,6 +283,7 @@
 					"apigeeAdminPassword": {
 						"value": "[parameters('apigeeAdminPassword')]"
 					}
+					
 				}
 			}
 		},
