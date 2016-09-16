@@ -57,7 +57,7 @@
     },
     "templateLocation": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/sysgain/bosh-azure-template/pivotal-P2P/pivotal-P2P/Apigee",
+      "defaultValue": "https://raw.githubusercontent.com/sysgain/bosh-azure-template/Pivotalp2pv2/pivotal-P2P/Apigee",
       "metadata": {
         "description": "Template file location",
         "artifactsBaseUrl": "Base URL of the Publisher Template gallery package"
