@@ -5,21 +5,6 @@
 		"location": {
 			"type": "string",
 			"defaultValue": "westus",
-			"allowedValues": [
-				"Brazil South",
-				"East Asia",
-				"East US",
-				"Japan East",
-				"Japan West",
-				"North Central US",
-				"North Europe",
-				"South Central US",
-				"West Europe",
-				"West US",
-				"Southeast Asia",
-				"Central US",
-				"East US 2"
-			],
 			"metadata": {
 				"description": "Deployment location of where Apigee will be installed"
 			}
