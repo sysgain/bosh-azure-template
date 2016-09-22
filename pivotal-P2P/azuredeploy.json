@@ -282,13 +282,15 @@
 					},
 					"apigeeAdminPassword": {
 						"value": "[parameters('apigeeAdminPassword')]"
+					},
+					"apigeeAdminEmail":{
+						"value": "[parameters('apigeeAdminEmail')]"
 					}
 					
 				}
 			}
 		},
-
-		{
+	{
 			"name": "apigeeEdge",
 			"type": "Microsoft.Resources/deployments",
 			"apiVersion": "2015-01-01",
@@ -331,13 +333,48 @@
 					},
 					"templateLocation": {
 						"value": "[variables('templateLocation')]"
+					},
+					"managementPublicIPDNSName": {
+						"value": "[variables('managementPublicIPDNSName')]"
+					},
+					"managementUI": {
+						"value": "[variables('managementUI')]"
+					},
+					"managementDNSName":{
+						"value": "[variables('managementDNSName')]"
+					},
+					"managementDNSAlias": {
+						"value": "[variables('managementDNSAlias')]"
+					},
+					"managementPublicIPAddressName": {
+						"value": "[variables('managementPublicIPAddressName')]"
+					},
+					"managementPublicIPResourceId":  {
+						"value": "[variables('managementPublicIPResourceId')]"
+					},
+					"runtimePublicIPDNSName": {
+						"value": "[variables('runtimePublicIPDNSName')]"
+					},
+					"runtimePublicDNSName": {
+						"value": "[variables('runtimePublicDNSName')]"
+					},
+					"runtimePublicDNSAlias": {
+						"value": "[variables('runtimePublicDNSAlias')]"
+					},
+					"runtimePublicIPAddressName": {
+						"value": "[variables('runtimePublicIPAddressName')]"
+					},
+					"runtimePublicIPResourceId": {
+						"value": "[variables('runtimePublicIPResourceId')]"
+					},
+					"publicIPDNSName": {
+						"value": "[variables('runtimePublicIPResourceId')]"
 					}
 
 				}
 			}
 
-		}
-	],
+		}],
 	"outputs": {
 		"managementPublicDNSName": {
 			"value": "[variables('managementDNSName')]",
@@ -351,6 +388,7 @@
 			"value": "[variables('managementUI')]",
 			"type": "string"
 		},
+		
 		"scriptoutput": {
 			"type": "String",
 			"value": "[reference('pcf').outputs.scriptoutput.value]"
