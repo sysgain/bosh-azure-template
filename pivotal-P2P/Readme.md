@@ -1,7 +1,7 @@
 ##Solution Template Overview:  Pivotal Cloud Foundry + Concourse + Apigee
 Solution Templates provide customers with a highly automated process to launch enterprise ready first and 3rd party ISV solution stacks on Azure in a pre-production environment. The Solution Template effort is complimentary to the Azure Marketplace test drive program. These fully baked stacks enable customers to quickly stand up a PoC or Piloting environments and also integrate it with their systems and customization.
 Customers benefit greatly from solution templates because of the ease with which they can stand up enterprise-grade, fully integrated stacks on Azure. The extensive automation and testing of these solutions will allow them to spin up pre-production environments with minimal manual steps and customization. Most importantly, customers now have the confidence to transition the solution into a fully production-ready environment with confidence.
-Aspera/Wowza - Media Services Solution Template (TBD) launches a secure, on-demand, high quality and reliable audio/video streaming solution with Wowza on Azure. Combined with Aspera and Azure Media services, this solution stack will allow users to quickly instantiate a media services stack/platform and bring their custom content and configuration to be streamed. These are intended as pilot solutions and not production ready.
+This solution stack will allow users to quickly instantiate a Pivotal Cloud Foundry platform and bring their custom applications and deploy on cloud foundry. These are intended as pilot solutions and not production ready.
 Please contact us if you need further info or support on this solution.
 
 ##Licenses & Costs
@@ -22,7 +22,8 @@ Use the Instructions here to generate Azure Service Principal file
 
 Pivotal Network Account: If you do not already have an account, create one. You will need the API token located in your profile. Navigate to your name in the top right and select Edit Profile. The API token is located at the bottom of the page.
 
-## Solution Summary
+# Solution Summary
+
 
 ##Product Architecture
 ![Product Architecture](https://raw.githubusercontent.com/sysgain/pivotal/master/pivotal-P2P-Architecture.jpg)
@@ -30,10 +31,19 @@ Pivotal Network Account: If you do not already have an account, create one. You 
 ##Solution contains the following
 The diagram above provides the overall deployment architecture for this solution template.
 As a part of deployment, the template launches the following:
+
 Pivotal Cloud Foundry
+
 Concourse Continuous Integration
+
 Apigee Edge Gateway
+
 Azure Meta Service Broker
+
+###Pivotal Cloud Foundry
+Pivotal cloud foundry offer developers a production-ready application container runtime and fully automated service deployments. Meanwhile, operations teams can sleep easier with the visibility and control made possible by platform-enforced policies and automated lifecycle management.
+Cloud Foundry supports the full lifecycle, from initial development, through all testing stages, to deployment. It is therefore well-suited to the continuous delivery strategy. Users have access to one or more spaces, which typically correspond to a lifecycle stage. For example, an application ready for QA testing might be pushed (deployed) to its project's QA space. Different users can be restricted to different spaces with different access permissions in each.
+###Concourse Continuous Integration
 
 ###RESOURCES
 56 Virtual Machines
