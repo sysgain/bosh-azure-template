@@ -56,8 +56,11 @@ Concourse limits itself to three core concepts: tasks, resources, and the jobs t
 Apigee Edge is a platform for developing and managing API proxies. The primary consumers of Edge API proxies are app developers who want to use your backend services. The API proxy isolates the app developer from your backend service. 
 Rather than having app developers consume your services directly, they access an API proxy created on Edge. The API proxy functions as a mapping of a publicly available HTTP endpoint to your backend service.  By creating an API proxy you let Edge handle the security and authorization tasks required to protect your services, as well as to analyze, monitor, and monetize those services.
 ####Components of Apigee Edge
+
 -Edge API Services - Apigee Edge API Services are all about creating and consuming APIs, whether you're building API proxies as a service provider or using APIs, SDKs, and other convenience services as an app developer.
+
 -Edge Analytics Services - Apigee Edge Analytics Services provides powerful tools to see short- and long-term usage trends of your APIs.
+
 -Edge Developer Services - Apigee Edge Developer Services provide the tools to manage the community of app developers using your services.
 
 ###Azure Meta Service Broker
