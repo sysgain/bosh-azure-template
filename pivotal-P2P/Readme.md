@@ -46,10 +46,15 @@ Cloud Foundry supports the full lifecycle, from initial development, through all
 ###Concourse Continuous Integration
 Concourse is a simple and scalable way to declare your continuous integration as code.
 Concourse limits itself to three core concepts: tasks, resources, and the jobs that compose them. 
+
 -A task is the execution of a script in an isolated environment with dependent resources available to it. A task can either be executed by a Job or executed manually with the Fly CLI.
+
 -A resource is any entity that can be checked for new versions, pulled down at a specific version, and/or pushed up to idempotently create new versions.
+
 -Jobs can be thought of as functions with inputs and outputs, that automatically run when new inputs are available. A job can depend on the outputs of upstream jobs, which is the root of pipeline functionality.
+
 -Concourse “pipelines” are YAML files that declare resources to use, e.g. Git repos or Docker images, and contain a set of jobs to execute. In turn, jobs are sub-divided into tasks and each task runs in a container. 
+
 -An instance of execution of a job's plan is called a build. Builds in Concourse are reproducible since their tasks run afresh in new containers. 
 
 ###Apigee Edge Gateway
