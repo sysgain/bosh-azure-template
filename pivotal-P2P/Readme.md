@@ -108,8 +108,11 @@ Azure SQL Database Service - Azure SQL Database is a relational database service
 
 ###RESOURCES
 56 Virtual Machines
+
 Document DB
+
 SQL Server
+
 3 Public IP Addresses
 
 ## Deployment Steps
